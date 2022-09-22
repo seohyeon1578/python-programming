@@ -1,7 +1,5 @@
 # 핫플레이스 인구 분석
 
-from cProfile import label
-from turtle import color
 import matplotlib.pyplot as plt
 import csv
 
