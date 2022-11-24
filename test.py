@@ -141,3 +141,71 @@ import matplotlib.pyplot as plt
 # print("실제 점수: ", y)
 # print("예측 점수: ", y_pred)
 
+# 텐서플로 선형 회귀 모델
+# x = np.array([2, 4, 6, 8])
+# y = np.array([81, 93, 91, 97])
+
+# model = Sequential()
+
+# model.add(Dense(1, input_dim=1, activation='linear'))
+# model.compile(optimizer='sgd', loss='mse')
+
+# model.fit(x, y, epochs=2000)
+
+# plt.scatter(x, y)
+# plt.plot(x, model.predict(x), 'r')
+# plt.show()
+
+# hour = 7
+# prediction = model.predict([hour])
+# print("%.f시간을 공부할 경우의 예상 점수는 %.02f점입니다." % (hour, prediction))
+
+# 로지스틱 회귀 모델
+# x = np.array([2, 4, 6, 8, 10, 12, 14])
+# y = np.array([0, 0, 0, 1, 1, 1, 1])
+
+# model = Sequential()
+# model.add(Dense(1, input_dim=1, activation='sigmoid'))
+
+# model.compile(optimizer="sgd", loss="binary_crossentropy")
+# model.fit(x, y, epochs=5000)
+
+# plt.scatter(x, y)
+# plt.plot(x, model.predict(x), 'r')
+# plt.show()
+
+# hour = 7
+# prediction = model.predict([hour])
+# print("%.f시간을 공부할 경우, 합격 예상 확률은 %.01f%%입니다." % (hour, prediction * 100))
+
+# xor
+
+# w11 = np.array([-2, -2])
+# w12 = np.array([2, 2])
+# w2 = np.array([1, 1])
+# b1 = 3
+# b2 = -1
+# b3 = -1
+
+# def MLP(x, w, b):
+#   y = np.sum(w * x) + b
+#   if y <= 0:
+#     return 0
+#   else:
+#     return 1
+
+# def NAND(x1, x2):
+#   return MLP(np.array([x1, x2]), w11, b1)
+
+# def OR(x1, x2):
+#   return MLP(np.array([x1, x2]), w12, b2)
+
+# def AND(x1, x2):
+#   return MLP(np.array([x1, x2]), w2, b3)
+
+# def XOR(x1, x2):
+#   return AND(NAND(x1, x2), OR(x1, x2))
+
+# for x in [(0, 0), (1, 0), (0, 1), (1, 1)]:
+#   y = XOR(x[0], x[1])
+#   print("입력 값: " + str(x) + " 출력 값: " + str(y))
